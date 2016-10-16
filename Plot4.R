@@ -41,7 +41,7 @@ if( ! file.exists(txtrawfile)) {
 
 #In looking at the readme file from the Project parameters, the sep char is sep=";" and the NA.char = "?"
 
-#readsample <- read.table(txtrawfile,header=TRUE, nrows=10,sep=";",na.strings = "?", stringsAsFactors = FALSE)
+readsample <- read.table(txtrawfile,header=TRUE, nrows=10,sep=";",na.strings = "?", stringsAsFactors = FALSE)
 #head(readsample)
 
 #In looking at the file, the date column is "day/month/year". This means we
@@ -50,7 +50,8 @@ if( ! file.exists(txtrawfile)) {
 
 #Now, we need to figure out the class of each column to help reduce time to 
 #load the full file (filtered) into R, not just this small sample.
-#txtClasses <- sapply(readsample,class)
+
+txtClasses <- sapply(readsample,class)
 
 #The Date and Time classes are shown as 'character'. The rest are classed as 'numeric'.
 #See if we can reload the first few rows as before, but set the classes during the load.
